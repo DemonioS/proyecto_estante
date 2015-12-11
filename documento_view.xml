@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+ 
+        <menuitem id="menu_root_documento"  name="Documentos" sequence="30" />
+ 
+        <menuitem id="menu_root_documento_archivo_view"  name="archivos guardados" parent="menu_root_documento"/>
+ 
+        <record model="ir.actions.act_window" id="listar_archivo_action">
+            <field name="name">Documentos</field>
+            <field name="res_model">documento.archivo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+ 
+        <menuitem id="menu_root_documento_listar_archivo"  name="Listar libros" parent="menu_root_documento_archivo_view" action="listar_archivo_action" />
+ 
+        <record model="ir.ui.view" id="view_documento_archivo_tree">
+            <field name="name">view.documento.archivo.tree</field>
+            <field name="model">documento.archivo</field>
+            <field name="arch" type="xml">
+                <tree string="Idea list">
+                    <field name="name"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+ 
+ 
+        <record model="ir.ui.view" id="view_documento_archivo_form">
+            <field name='name'>view.documento.archivo.form</field>
+            <field name="model">documento.archivo</field>
+            <field name="arch" type="xml">
+                <form string="libro form" version="7.0">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <group>                               
+                                <field name="nombre"/>
+                            </group>
+                            <group>
+                                <field name="fecha"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Description">
+                                <field name="descripcion"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+ 
+    </data>
+</openerp>
