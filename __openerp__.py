@@ -10,7 +10,7 @@
             'base',
             ],
     'data' : [              
-            'documento_view.xml', 
+            'biblioteca_view.xml', 
                 ],
     'installable' : True,
     'aplication' : True,    
